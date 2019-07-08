@@ -8,9 +8,9 @@ class flames():     #Created a class
 
     def __init__(self):         #Created Constructor
         #Removing spaces converting to lowercase & converting to list at the time of input taking only
-        self.boy = list((((input('Enter boy name? ')).lower()).strip()).replace(" ",""))
-        self.girl = list((((input('Enter girl name? ')).lower()).strip()).replace(" ",""))
-        self.remove_match_char()    #Calling another funcion
+        self.boy = list(filter(str.isalpha,(((input('Enter boy name? ')).lower()).strip()).replace(" ","")))
+        self.girl = list(filter(str.isalpha,(((input('Enter girl name? ')).lower()).strip()).replace(" ","")))
+        self.remove_match_char()    #Calling another funcion 
 
     def remove_match_char(self):    #To remove duplicate characters from both the names
         for i in self.boy:
